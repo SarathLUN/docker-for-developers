@@ -23,18 +23,62 @@
 - Easy recovery
 - Enabler of DevOps
 
-## Commands
+## Prerequisite 
+
+- to follow along this workshop you need to have docker engine ready running in your system
+- I recommend to use Linux native system ether your local system or AWS EC2 Linux, to experience 100% of docker features
+- If you are using Docker Desktop on Windows/MacOSX, it will be not native, instead the Docker Desktop will spine up VM on top of your OS
+- verify your docker engine ready by `version` command
+
+```shell
+docker version
+```
+
+output:
+
+![docker-version](screenshots/docker-version.png)
+
+_show your output here_
+
+## Practise Commands and capture screen:
 
 - run : start a container
 
 ```shell
 docker run $image_name # attach mode, CTRL+C to stop, container will also exit
+```
+
+_show your output here_
+
+```shell
 docker run -d $image_name # detach mode
+```
+
+_show your output here_
+
+```shell
 docker run -i $image_name # interactive mode
+```
+
+_show your output here_
+
+```shell
 docker run -it $image_name # interactive sudo terminal mode
+```
+
+_show your output here_
+
+```shell
 docker run -p $external_port:$internal_port $image_name # mapping port 8080 of localhost to port 80 of container, we can't now access nginx through port 80, but instead need to use 8080.
+```
+
+_show your output here_
+
+```shell
 docker run -v $docker_host_dir:$container_dir $image_name # persistent data store
 ```
+
+_show your output here_
 
 - attach : attach terminal into running container
 
@@ -43,12 +87,21 @@ docker attach $container_name
 docker attach $container_id
 ```
 
+_show your output here_
+
 - ps : list containers
 
 ```shell
 docker ps
+```
+
+_show your output here_
+
+```shell
 docker ps -a # include stopped containers
 ```
+
+_show your output here_
 
 - stop : stop a container
 
@@ -57,6 +110,8 @@ docker stop $container_id # use container id as argument
 docker stop $container_name # use container name as argument
 ```
 
+_show your output here_
+
 - rm : remove an exited container
 
 ```shell
@@ -64,12 +119,16 @@ docker rm $container_id # use container id as argument
 docker rm $container_name # use container name as argument
 ```
 
+_show your output here_
+
 - images : list images
 
 ```shell
 docker images # deprecated
 docker image ls # new version
 ```
+
+_show your output here_
 
 - rmi : remove image
 
@@ -80,11 +139,15 @@ docker rmi $image_id
 docker image rm $image_id
 ```
 
+_show your output here_
+
 - pull : download image
 
 ```shell
 docker pull $repo_name
 ```
+
+_show your output here_
 
 - push : upload image
 
@@ -92,11 +155,15 @@ docker pull $repo_name
 docker push $docker_hub_account/$docker_image_name:$tag
 ```
 
+_show your output here_
+
 - exec : execute a command in running container
 
 ```shell
 docker exec $container_name <command>
 ```
+
+_show your output here_
 
 - logs : view the logs inside the container
 
@@ -105,52 +172,4 @@ docker logs $container_name
 docker logs $container_id
 ```
 
-## Environment Variables
-
-- set OS env via `run` command
-
-```shell
-docker run -e $env_name=$env_value $image_name
-```
-
-- show OS env via `inspect` command
-
-```shell
-docker inspect $container_name
-```
-
-## How to create my own image?
-
-- identify the steps to be done in the right order:
-
-  1. OS - Ubuntu
-  2. Update apt repo
-  3. Install dependencies using `apt`
-  4. Install python dependencies using `pip`
-  5. Copy source code to `/opt` folder
-  6. Run the web server using `flask` command
-
-- convert the steps into `Dockerfile`
-
-```dockerfile
-FROM Ubuntu
-
-RUN apt-get update
-RUN apt-get install python
-
-RUN pip install flask
-RUN pip install flask-mysql
-
-COPY . /opt/source-code
-
-ENTRYPOINT FLASK_APP=/opt/source-code/app.py flask run
-```
-
-- build image
-
-```shell
-docker build -t $docker_hub_account/$image_name:$tag .
-
-# by default "Dockerfile" will be used, but we can also specify it
-docker build -t $docker_hub_account/$image_name:$tag $path_to_dockerfile
-```
+_show your output here_
