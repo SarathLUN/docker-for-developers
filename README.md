@@ -13,7 +13,7 @@
 - Library/dependency compatibility
 - The Matrix from Hell!!
 - New developer joiner, setup environment
-- Make sure all developers are on same env
+- Ensure all developers are on same env
 - Run each component in a separate container with its own dependencies and libraries
 - Build Once, Use Many by developers
 - Docker (high level) utilizes Aleksey (low level) containers
