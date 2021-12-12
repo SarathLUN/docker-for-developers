@@ -38,8 +38,6 @@ output:
 
 ![docker-version](screenshots/docker-version.png)
 
-_show your output here_
-
 ## Practise Commands and capture screen:
 
 - run : start a container
@@ -48,7 +46,7 @@ _show your output here_
 docker run $image_name # attach mode, CTRL+C to stop, container will also exit
 ```
 
-_show your output here_
+![docker-run-attach-mode](screenshots/docker-run-attach-mode.png)
 
 ```shell
 docker run -d $image_name # detach mode
