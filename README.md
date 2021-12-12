@@ -77,7 +77,8 @@ docker run -p $external_port:$internal_port $image_name # mapping port 8080 of l
 docker run -v $docker_host_dir:$container_dir $image_name # persistent data store
 ```
 
-_show your output here_
+![volume-not-work](screenshots/volume-not-work.png)
+for Docker Desktop in Windows/MacOSX will need to search for work around on docker volume.
 
 - attach : attach terminal into running container
 
