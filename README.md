@@ -87,21 +87,24 @@ docker attach $container_name
 docker attach $container_id
 ```
 
-_show your output here_
+![docker-attach](screenshots/docker-attach.png)
+
+when we attach without interactive mode, the container will stop if we do `CTRL+C`
+but if just close our terminal window, will not impact to attached console, so container still running.
 
 - ps : list containers
 
 ```shell
-docker ps
+docker ps # show only running containers
 ```
 
-_show your output here_
+![docker-ps](screenshots/docker-ps.png)
 
 ```shell
 docker ps -a # include stopped containers
 ```
 
-_show your output here_
+![docker-ps-a](screenshots/docker-ps-a.png)
 
 - stop : stop a container
 
@@ -110,7 +113,7 @@ docker stop $container_id # use container id as argument
 docker stop $container_name # use container name as argument
 ```
 
-_show your output here_
+![docker-stop](screenshots/docker-stop.png)
 
 - rm : remove an exited container
 
@@ -119,7 +122,12 @@ docker rm $container_id # use container id as argument
 docker rm $container_name # use container name as argument
 ```
 
-_show your output here_
+![docker-rm](screenshots/docker-rm.png)
+
+For exploration:
+
+- remove multiple stopped containers in single command
+- remove running container
 
 - images : list images
 
@@ -128,7 +136,9 @@ docker images # deprecated
 docker image ls # new version
 ```
 
-_show your output here_
+![docker-image-ls](screenshots/docker-image-ls.png)
+
+container life cycle: image -> container -> stop -> remove
 
 - rmi : remove image
 
@@ -139,7 +149,11 @@ docker rmi $image_id
 docker image rm $image_id
 ```
 
-_show your output here_
+![docker-image-rm](screenshots/docker-image-rm.png)
+
+For exploration:
+
+- try to remove image that running by a container
 
 - pull : download image
 
@@ -147,15 +161,25 @@ _show your output here_
 docker pull $repo_name
 ```
 
-_show your output here_
+![docker-pull](screenshots/docker-pull.png)
 
-- push : upload image
+- tag : create new version of image
+
+```shell
+docker tag $existing_image_full_name $new_image_full_name
+```
+
+![docker-tag](screenshots/docker-tag.png)
+
+- push : upload image, require to have docker hub account
 
 ```shell
 docker push $docker_hub_account/$docker_image_name:$tag
 ```
 
-_show your output here_
+![docker-push-01](screenshots/docker-push-01.png)
+
+![docker-push-02](screenshots/docker-push-02.png)
 
 - exec : execute a command in running container
 
@@ -163,7 +187,7 @@ _show your output here_
 docker exec $container_name <command>
 ```
 
-_show your output here_
+![docker-exec](screenshots/docker-exec.png)
 
 - logs : view the logs inside the container
 
@@ -172,4 +196,4 @@ docker logs $container_name
 docker logs $container_id
 ```
 
-_show your output here_
+![docker-logs](screenshots/docker-logs.png)
