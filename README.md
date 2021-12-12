@@ -7,7 +7,7 @@
 
 ---
 
-## Why do you need docker.?
+## Why do you need docker?
 
 - OS compatibility
 - Library/dependency compatibility
