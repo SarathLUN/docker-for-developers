@@ -38,8 +38,6 @@ output:
 
 ![docker-version](screenshots/docker-version.png)
 
-_show your output here_
-
 ## Practise Commands and capture screen:
 
 - run : start a container
@@ -48,19 +46,19 @@ _show your output here_
 docker run $image_name # attach mode, CTRL+C to stop, container will also exit
 ```
 
-_show your output here_
+![docker-container](screenshots/start_container.PNG)
 
 ```shell
 docker run -d $image_name # detach mode
 ```
 
-_show your output here_
+![docker-run-d](screenshots/docker-run.PNG)
 
 ```shell
 docker run -i $image_name # interactive mode
 ```
 
-_show your output here_
+![docker-run-d](screenshots/docker-run-i.PNG)
 
 ```shell
 docker run -it $image_name # interactive sudo terminal mode
