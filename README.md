@@ -64,13 +64,14 @@ docker run -i $image_name # interactive mode
 docker run -it $image_name # interactive sudo terminal mode
 ```
 
-_show your output here_
+![docker-run-it](screenshots/docker-run-it.png)
 
 ```shell
 docker run -p $external_port:$internal_port $image_name # mapping port 8080 of localhost to port 80 of container, we can't now access nginx through port 80, but instead need to use 8080.
 ```
 
-_show your output here_
+![docker-run-port-mapping-01](screenshots/docker-run-port-mapping-01.png)
+![docker-run-port-mapping-02](screenshots/docker-run-port-mapping-02.png)
 
 ```shell
 docker run -v $docker_host_dir:$container_dir $image_name # persistent data store
