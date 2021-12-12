@@ -52,13 +52,13 @@ docker run $image_name # attach mode, CTRL+C to stop, container will also exit
 docker run -d $image_name # detach mode
 ```
 
-_show your output here_
+![docker-run-detach-mode](screenshots/docker-run-detach-mode.png)
 
 ```shell
 docker run -i $image_name # interactive mode
 ```
 
-_show your output here_
+![docker-run-interactive-mode](screenshots/docker-run-interactive-mode.png)
 
 ```shell
 docker run -it $image_name # interactive sudo terminal mode
