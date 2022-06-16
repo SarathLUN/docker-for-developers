@@ -157,11 +157,11 @@ CMD ["app"]
 - step 3: build image
 
 ```shell
-docker build -t $docker_hub_account/$image_name:$tag .
+# docker build -t $docker_hub_account/$image_name:$tag .
 docker build -t tonysarath/my-golang-app:latest .
 
 # by default "Dockerfile" will be used, but we can also specify it
-docker build -t $docker_hub_account/$image_name:$tag $path_to_dockerfile
+# Ex: docker build -t $docker_hub_account/$image_name:$tag $path_to_dockerfile
 ```
 
 - step 4: run container
