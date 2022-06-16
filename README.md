@@ -130,13 +130,13 @@ docker inspect $container_name
 
 - step 1: identify the steps to be done in the right order:
 
-  1. OS - golang:alpine
-  2. define working directory
-  3. copy source code into container
-  4. initialize go module
-  5. download application dependencies
-  6. build our application into binary executable file
-  7. run our program
+1. OS - golang:alpine
+2. define working directory
+3. copy source code into container
+4. initialize go module
+5. download application dependencies
+6. build our application into binary executable file
+7. run our program
 
 - step 2: convert the steps into `Dockerfile`
 
