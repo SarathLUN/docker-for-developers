@@ -158,14 +158,14 @@ CMD ["app"]
 
 ```shell
 docker build -t $docker_hub_account/$image_name:$tag .
-docker build -t tonysarath/docker-golang-demo:1 .
+docker build -t tonysarath/my-golang-app:latest .
 
 # by default "Dockerfile" will be used, but we can also specify it
 docker build -t $docker_hub_account/$image_name:$tag $path_to_dockerfile
 ```
 
-- step 4: run your container
+- step 4: run container
 
 ```shell
-docker run tonysarath/docker-golang-demo
+docker run -itd -p 80:80 --rm --name my-running-app tonysarath/my-golang-app
 ```
