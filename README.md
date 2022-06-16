@@ -128,36 +128,44 @@ docker inspect $container_name
 
 ## How to create my own image?
 
-- identify the steps to be done in the right order:
+- step 1: identify the steps to be done in the right order:
 
-  1. OS - Ubuntu
-  2. Update apt repo
-  3. Install dependencies using `apt`
-  4. Install python dependencies using `pip`
-  5. Copy source code to `/opt` folder
-  6. Run the web server using `flask` command
+  1. OS - golang:alpine
+  2. define working directory
+  3. copy source code into container
+  4. initialize go module
+  5. download application dependencies
+  6. build our application into binary executable file
+  7. run our program
 
-- convert the steps into `Dockerfile`
+- step 2: convert the steps into `Dockerfile`
 
 ```dockerfile
-FROM Ubuntu
+FROM golang:alpine
 
-RUN apt-get update
-RUN apt-get install python
+WORKDIR /go/src/app
+COPY . .
 
-RUN pip install flask
-RUN pip install flask-mysql
+RUN go mod init
+RUN go get -d -v ./...
+RUN go install -v ./...
 
-COPY . /opt/source-code
+CMD ["app"]
 
-ENTRYPOINT FLASK_APP=/opt/source-code/app.py flask run
 ```
 
-- build image
+- step 3: build image
 
 ```shell
 docker build -t $docker_hub_account/$image_name:$tag .
+docker build -t tonysarath/docker-golang-demo:1 .
 
 # by default "Dockerfile" will be used, but we can also specify it
 docker build -t $docker_hub_account/$image_name:$tag $path_to_dockerfile
+```
+
+- step 4: run your container
+
+```shell
+docker run 
 ```
