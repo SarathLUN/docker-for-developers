@@ -1,9 +1,8 @@
 # `</>` Docker for Developers `</>`;
 
-#### WORKSHOP # 02;
-#### Date: 2021-12-12;
-#### Time: 10:00 - 16:00;
-#### Location: Microsoft Teams;
+#### Date: 2022-06-17;
+#### Time: 14:00 - 15:00;
+#### Location: CADT;
 
 ---
 
@@ -11,7 +10,7 @@
 
 - OS compatibility
 - Library/dependency compatibility
-- The Matrix from Hell!!
+- Resolve [The Matrix from Hell](https://dzone.com/articles/are-you-stuck-in-the-new-devops-matrix-from-hell) !!!
 - New developer joiner, setup environment
 - Ensure all developers are on same env
 - Run each component in a separate container with its own dependencies and libraries
@@ -21,9 +20,17 @@
 - Ship, run anywhere, anytime, many times
 - Efficiency than VM
 - Easy recovery
-- Enabler of DevOps
+- One Enabler for DevOps adaption
 
 ## Commands
+
+- help: show all available functions of the docker command
+
+```shell
+docker --help 
+docker COMMAND --help
+docker [OPTIONS] COMMAND
+```
 
 - run : start a container
 
