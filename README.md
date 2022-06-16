@@ -167,5 +167,5 @@ docker build -t $docker_hub_account/$image_name:$tag $path_to_dockerfile
 - step 4: run your container
 
 ```shell
-docker run 
+docker run tonysarath/docker-golang-demo
 ```
